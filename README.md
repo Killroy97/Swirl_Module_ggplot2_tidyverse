@@ -61,11 +61,5 @@ If you have any questions, suggestions, or feedback, please feel free to reach o
 
 
 
-This is an example code block 
-
-```
-tidyverse.install packages
-
-```
 
 
