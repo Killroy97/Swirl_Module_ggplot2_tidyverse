@@ -38,18 +38,57 @@ Please note that a basic understanding of R and RStudio is expected in order to 
 
 ## Installation
 
-1. Provide step-by-step installation instructions.
-2. Include any prerequisites or dependencies.
-3. Explain any additional configuration or setup steps.
-4. If applicable, provide troubleshooting tips.
+To install the package. Navigate to [project_files](Linkhere) 
+The contents of this module can be found on this Github repository. Please make sure you are well connected to the Internet to download all the necessary files. The following files can be found and are necessary to run the entire module: 1. lesson.yaml 2. initLesson.R 3. dependson.txt 4. customTests.R  
+
+Once the user has downloaded the .swc file from the repository, They can simply use the command
+```
+library(swirl)
+swirl::install_course_directory(filepath)
+```
+The user has now successfully installed the course!Now, to begin the course, the user can simply run
+```
+swirl()
+```
+Running the above code will provide the user with the course menu.
+
+**NOTE**: The course module “facets and Geometric objects” requires installed R packages before you could
+install the course. An R package is a group of additional functions, information, and documentation for the
+R programming language.  
+
+**Pre-requsites**: The following packages are required before running the package.   
+1. Tidyverse 
+```
+install.packages("tidyverse")
+```
+2. World bank data to import the datset used in this course 
+```
+install.packages("WDI")
+```
+3. Pacman
+```
+install.packages("pacman")
+```
+Once all the required packages are installed. The following datasets can be imported directly into the global environment by:
+
+```
+urbanpopulation= WDI(indicator= "SP.URB.TOTL", country = c('AU','BR','CN','DE','IN','NG','US'),
+start =1990, end = 2020 )
+```
+```
+forestarea= WDI(indicator= "AG.LND.FRST.K2", country = c('AU','BR','CN','DE','IN','NG','US'),
+start =1990, end = 2020 )
+```
+**What datasets are choosen and why?**
+The first data set selected from the world bank data was Urban population growth in the
+world. Since the data set consisted of all the countries in the world, we wanted to narrow it down to
+one country from each part of the world, which resulted in the data of 7 countries.
+The second data set chosen was the Forest land (in sq.km) of the same countries as the first data set.
+The reason behind choosing this data set was that we wanted to highlight the correlation between growing population and declining forest area as we see it.  
 
 ## Usage
-
-1. Show examples of how to use your project.
-2. Provide code snippets or screenshots if necessary.
-3. Describe any important functions or classes.
-4. If applicable, explain the expected inputs and outputs.
-5. Include any usage restrictions or limitations.
+Once the installation of different libraries and datasets are done, the individual can start learning the course by simply following the instructions presented on the console. Any hurdles can be overcome by simply accessing the hint, or the examplar answer by procceding further.
+ 
 
 ## Contributing
 
