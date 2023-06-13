@@ -42,33 +42,33 @@ The contents of this module can be found on this Github repository. Please make 
 
 **Pre-requsites**: The following packages are required before running the package.   
 1. Tidyverse 
-```
+```ruby
 install.packages("tidyverse")
 ```
 2. World bank data to import the datset used in this course 
-```
+```ruby
 install.packages("WDI")
 ```
 3. Pacman
-```
+```ruby
 install.packages("pacman")
 ```
 Once all the required packages are installed. The following datasets can be imported directly into the global environment by:
 
-```
+```ruby
 urbanpopulation= WDI(indicator= "SP.URB.TOTL", country = c('AU','BR','CN','DE','IN','NG','US'),
 start =1990, end = 2020 )
 ```
 ![Dataset_1](https://github.com/Killroy97/Swirl_Module_ggplot2_tidyverse/assets/132211845/ed3d50bd-8999-47b7-8e7f-4ac625cc6308)  
 
-```
+```ruby
 forestarea= WDI(indicator= "AG.LND.FRST.K2", country = c('AU','BR','CN','DE','IN','NG','US'),
 start =1990, end = 2020 )
 ```
 ![Dataset_2](https://github.com/Killroy97/Swirl_Module_ggplot2_tidyverse/assets/132211845/90e7ef00-0ad3-4d60-8283-9d87ba2c9b7f)  
 
 Subsequently, the usage of merger function by entering the following code will provide us with the master data required to go ahead with this course module.
-```
+```ruby
 master_data = merge(urbanpopulation, forestarea, by = c("iso2c","year", "country"))
 ```
 ![Global_environment](https://github.com/Killroy97/Swirl_Module_ggplot2_tidyverse/assets/132211845/c7f80fa9-7de4-4924-bd90-8dffb3a95a14)  
@@ -76,7 +76,7 @@ master_data = merge(urbanpopulation, forestarea, by = c("iso2c","year", "country
 
 Column names can be changed according to desire, thus making the data frame more readable.This can be
 done using the colnames function.
-```
+```ruby
 colnames(dataframe)[which(names(dataframe) == "columnName")] <- "newColumnName"
 ```
 ![Column_names_updated](https://github.com/Killroy97/Swirl_Module_ggplot2_tidyverse/assets/132211845/a7dad0f6-f568-4f96-9a1d-fe9eb0ad1110)  
@@ -90,12 +90,12 @@ The second data set chosen was the Forest land (in sq.km) of the same countries 
 The reason behind choosing this data set was that we wanted to highlight the correlation between growing population and declining forest area as we see it.
 
 Once the user has downloaded the .swc file from the repository, They can simply use the command
-```
+```ruby
 library(swirl)
 swirl::install_course_directory(filepath)
 ```
 The user has now successfully installed the course!Now, to begin the course, the user can simply run
-```
+```ruby
 swirl()
 ```
 Running the above code will provide the user with the course menu.
