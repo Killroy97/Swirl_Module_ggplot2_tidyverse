@@ -1,0 +1,158 @@
+- Class: meta
+  Course: Data visualization
+  Lesson: facets and geometric objects
+  Author: your name goes here
+  Type: Standard
+  Organization: your organization's name goes here
+  Version: 2.4.5
+- Class: text
+  Output: Hello and welcome to this course of data visualization using ggplot. In this module, we will cover an overview about ggplot and learn how to visualize your data in the form of facets and geometric objects. 
+
+- Class: text
+  Output: Before we begin, we would like to remind you that some necessary packages need to be installed.
+
+- Class: text
+  Output: If R studio has not automatically reminded you to install the following package, please use the function install.packages() to install the package tidyverse.
+  
+- Class: text
+  Output: Can you see them in your package library? if , you can now load them by using the library(package_name)
+  
+- Class: text
+  Output: There there! I thinke we are all set to go! With the passion to learn, you will complete this chapter in no time! All the best.
+
+ 
+- Class: mult_question
+  Output: When you are ready to begin the course, please choose yes.
+  AnswerChoices: Yes;No
+  CorrectAnswer: Yes
+  AnswerTests: omnitest(correctVal='Yes')
+  Hint: Type a hint.
+  
+- Class: text
+  Output: Kudos to you for taking the first step in learning this lesson! Lets begin with an overview about ggplot
+
+- Class: text
+  Output: What is ggplot? and what are it's features? 
+
+- Class: text
+  Output: The huge chunks of your data can get very untidy to be represneted to others, what is better than an elegant visualization? R has many visualization techniques, but ggplot remains to be one of the most elgant tool to do so.
+
+- Class: text
+  Output: ggplot enables you to plot your data any number of times and more importantly, faster than any other tool. It lets you customize between many types of visual plots and tweak its features. 
+
+- Class: text
+  Output: ggplot is one of the major packages of tidyverse universe, so please make sure you have loaded the tidyverse package to make the most of this course!  
+
+- Class: text
+  Output: Let us now consider a dataset we have customised to help us understand the course better. You are required to download the dataset from the Github link provided in the next step. 
+
+- Class: video
+  Output: Download the file "master_data". Before typing nxt(), please open the downloaded file using Rstudio which will load the data set into your environment.
+  VideoLink: https://github.com/Srikss/swirlify-dataset
+
+- Class: text
+  Output: great! now that the data set is imported, you can have a look at the data in your "enviroment" window. Go through the data and identify the variables.
+
+- Class: text
+  Output: Since this course mainly attempts to teach you about facets and geometric objetcs, we will briefly cover how to make a scatter plot, which will we further use to learn about facets.
+
+
+- Class: cmd_question
+  Output: Let us try to recall how to plot a basic scatter plot, and let us apply that on our data, to obtain a plot of "year" v/s "forestland". If you are not able to answer the question, you can use skip() to reveal the correct answer.
+  CorrectAnswer: ggplot(data = master_data) + geom_point(mapping = aes(x = year, y = forestland))
+  AnswerTests: omnitest(correctExpr='ggplot(data = master_data) +geom_point(mapping = aes(x = year, y = forestland))')
+  Hint: ggplot(data = <DATA>) + <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
+
+- Class: text
+  Output: And there you go! We have a basic scatter plot based on our data. BUt wait, isn't the plot very difficult to understand? 
+
+
+- Class: cmd_question
+  Output: Do you remeber we can define another variable in the plot using "color" function? Let's try it out, try to insert the color function in the code obtained above.
+  CorrectAnswer: ggplot(data = master_data) + geom_point(mapping = aes(x = year, y = forestland, color = country))
+  AnswerTests: omnitest(correctExpr='ggplot(data = master_data) + geom_point(mapping = aes(x = year, y = forestland, color = country))')
+  Hint: Assign color to another variable, which helps you differntiate between the scatter points. "color = desired variable "
+
+- Class: text
+  Output: There you go! Now can you see how better it is to understand the plot? Allright, that was a basic overview about how to create a scatter plot. 
+
+- Class: text
+  Output: Now, we cna see that there are many functions which can be called to improve the visualization. But we will concentrate on what kind of visualization are facets, and what is their purpose. 
+
+- Class: text
+  Output: Facets, what are they? Facets in simple terms are "sub-plots" of the bigger plots. This is one more way to add an extra variable from your data, and categorize each of them into different small parts! Isn't that interesting? why dont we try it out? 
+
+- Class: text
+  Output: To facet your plot by a single variable, we need to use `facet_wrap()` The first argument with facet_wrap should be your formula, which you begin with `~`. for example, facet_wrap(~country,    ) 
+
+- Class: text
+  Output: In addition, you also input the number of rows and columns you want the sub-plot in, by using `nrow` and `ncol` function. Lets try this out in the next step. 
+
+- Class: cmd_question
+  Output: Add `facet_wrap(~variable, nrow = 2) to the basic scatter plot command we used before changing the color of the categories. 
+  CorrectAnswer: ggplot(data = master_data) + geom_point(mapping = aes(x = year, y = forestland)) + facet_wrap(~ country, nrow = 2)
+  AnswerTests: omnitest(correctExpr='ggplot(data = master_data) + geom_point(mapping = aes(x = year, y = forestland)) + facet_wrap(~ country, nrow = 2)')
+  Hint:  ggplot(data = <DATA>) + <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>)) + facet_wrap(~ country, nrow =2)
+
+- Class: text
+  Output: You can now see how you categorized by creating sub-plots of each country! 
+
+- Class: text
+  Output: Which kind of plot do you find it easier to read? Categorizing the plot by color or facets? 
+
+- Class: text
+  Output: A major advantage facets have above color asthetics is that this does not clutter your plots in case of a larger data set. This inturn helps you analyze the data in a better way. 
+
+- Class: text
+  Output: You are doing really well till now! Let us cover one more function of the facet feature! Do you have more variables in your data that you would like to compare? For example, our data set also consists of "Urban population" Let us try to proect this into our facet by using the `facet_grid` function!
+
+- Class: text
+  Output: facet_grid helps you plot on the combination of two variables. The first argument of facet_grid is also a formula, and the two variables are seperated by the operater (~)
+
+- Class: cmd_question
+  Output: Add the facet_grid command to the facet_wrap command we used earlier by `+` operater sign. for example `+ facet_wrap(variable 1 ~ variable 2)
+  CorrectAnswer: ggplot(data = master_data) + geom_point(mapping = aes(x = year, y = forestland)) +facet_grid(code ~ country)
+  AnswerTests: omnitest(correctExpr='ggplot(data = master_data) + geom_point(mapping = aes(x = year, y = forestland)) +facet_grid(code ~ country)')
+  Hint: Type a hint.
+
+- Class: text
+  Output: As you can observe, we now have two different variables both in the row and column. You can also notice that the same cannot be done with coninous variables, that is - you could not plot the data for urban population in the grid as it is simply too large to process. 
+
+- Class: text
+  Output: if you do not have anything in either `nrow` or `ncol`, you can replace their space by `.` for example facet_grid( . ~ country) This is also benificial to interchange your desired variable. 
+
+- Class: text
+  Output: You can do something interesting here, can you see how the x-axis is all clustered? what if you can allign it so they are clearly readable? Let us try that out in the next step!
+  
+- Class: cmd_question
+  Output: The allignment of texts on graphs can be altered with the help of the theme function. Try adding the facet_grid code again with the theme function- theme(axis.text.x = element_text(angle = value , vjust = value, hjust=1))
+  CorrectAnswer:  ggplot(data = master_data) + geom_point(mapping = aes(x = year, y = forestland)) +facet_grid(code ~ country) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+  AnswerTests: omnitest(correctExpr=' ggplot(data = master_data) + geom_point(mapping = aes(x = year, y = forestland)) +facet_grid(code ~ country) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) ')
+  Hint: Type a hint.
+  
+- Class: text
+  Output: Allright! You did an excellent job in plotting your facet. Now, let us move on to geometric objects and how you data can be represnted in two similar ways but yet not identical.
+
+- Class: text
+  Output: As you have already seen how a plot with geom_point function of our data set looks like, let us now try to use the same comparision using geom_smooth.  
+
+- Class: cmd_question
+  Output: If you can recall the command we used to create a basic scatter plot using geom_point, interchanging it with the geom_smooth function will provide us with another plot. lets try! 
+  CorrectAnswer: ggplot(data = master_data) + geom_smooth(mapping = aes(x = year, y = forestland))
+  AnswerTests: omnitest(correctExpr='ggplot(data = master_data) +  geom_smooth(mapping = aes(x = year, y = forestland))')
+  Hint: Type a hint.
+
+- Class: text
+  Output: well? do you think both the plots are the same? Technically, both the plots represent the same data, but are not identical. This is mainly becuase of the geom function that we use. 
+
+- Class: text
+  Output: ggplot provides over 40 geoms, which represent two similar sets of data according to their respective functions! 
+
+
+- Class: text
+  Output: Do you wish to learn more about different geoms and their uses? you can do further reading at [link](https://r4ds.had.co.nz/data-visualisation.html)
+  
+ 
+- Class: text
+  Output: Well, It was lovely having you read through my course! I hope you have gotten a good overview about Visualization using ggplot with facets and geoms. Goodbye! 
+
