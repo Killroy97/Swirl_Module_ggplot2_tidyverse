@@ -58,3 +58,14 @@ If you have any questions, suggestions, or feedback, please feel free to reach o
 - Project Issues: [GitHub Issues](https://github.com/yourusername/yourrepository/issues)
 - Email: your-email@example.com
 - Twitter: [@yourtwitterhandle](https://twitter.com/yourtwitterhandle)
+
+
+
+This is an example code block 
+
+```
+tidyverse.install packages
+
+```
+
+
