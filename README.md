@@ -109,7 +109,7 @@ R programming language.
 
 - The course module will take the learner through a inteactive learning environment where they can test their knowledge about R codes and test them. 
 - The individual will be able to understand the process to creating optimal geometry and facets for any datset desired by the end of this course. 
-- The [Project Report](Project Report.pdf) can be used to navigate through the course, and also acts as a project report. 
+- The [Project Report]([Project Report.pdf](https://github.com/Killroy97/Swirl_Module_ggplot2_tidyverse/blob/92ef1bbbf2445760ee241f0bad1e4535887be77c/Project%20Report.pdf)) can be used to navigate through the course, and also acts as a project report. 
 
 
 Please ensure that you adhere to the project's coding conventions, documentation guidelines, and code of conduct.
