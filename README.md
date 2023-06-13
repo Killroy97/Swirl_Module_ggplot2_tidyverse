@@ -15,7 +15,6 @@ Please note that a basic understanding of R and RStudio is expected in order to 
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
@@ -38,23 +37,8 @@ Please note that a basic understanding of R and RStudio is expected in order to 
 
 ## Installation
 
-To install the package. Navigate to [project_files](Linkhere) 
+To install the package. Navigate to [project_files](facets_and_geometric_objects) 
 The contents of this module can be found on this Github repository. Please make sure you are well connected to the Internet to download all the necessary files. The following files can be found and are necessary to run the entire module: 1. lesson.yaml 2. initLesson.R 3. dependson.txt 4. customTests.R  
-
-Once the user has downloaded the .swc file from the repository, They can simply use the command
-```
-library(swirl)
-swirl::install_course_directory(filepath)
-```
-The user has now successfully installed the course!Now, to begin the course, the user can simply run
-```
-swirl()
-```
-Running the above code will provide the user with the course menu.
-
-**NOTE**: The course module “facets and Geometric objects” requires installed R packages before you could
-install the course. An R package is a group of additional functions, information, and documentation for the
-R programming language.  
 
 **Pre-requsites**: The following packages are required before running the package.   
 1. Tidyverse 
@@ -75,29 +59,58 @@ Once all the required packages are installed. The following datasets can be impo
 urbanpopulation= WDI(indicator= "SP.URB.TOTL", country = c('AU','BR','CN','DE','IN','NG','US'),
 start =1990, end = 2020 )
 ```
+![Dataset_1](https://github.com/Killroy97/Swirl_Module_ggplot2_tidyverse/assets/132211845/ed3d50bd-8999-47b7-8e7f-4ac625cc6308)  
+
 ```
 forestarea= WDI(indicator= "AG.LND.FRST.K2", country = c('AU','BR','CN','DE','IN','NG','US'),
 start =1990, end = 2020 )
 ```
+![Dataset_2](https://github.com/Killroy97/Swirl_Module_ggplot2_tidyverse/assets/132211845/90e7ef00-0ad3-4d60-8283-9d87ba2c9b7f)  
+
+Subsequently, the usage of merger function by entering the following code will provide us with the master data required to go ahead with this course module.
+```
+master_data = merge(urbanpopulation, forestarea, by = c("iso2c","year", "country"))
+```
+![Global_environment](https://github.com/Killroy97/Swirl_Module_ggplot2_tidyverse/assets/132211845/c7f80fa9-7de4-4924-bd90-8dffb3a95a14)  
+![Master_data](https://github.com/Killroy97/Swirl_Module_ggplot2_tidyverse/assets/132211845/cb0fef00-3c07-40fb-945e-8b09e19e1377)  
+
+Column names can be changed according to desire, thus making the data frame more readable.This can be
+done using the colnames function.
+```
+colnames(dataframe)[which(names(dataframe) == "columnName")] <- "newColumnName"
+```
+![Column_names_updated](https://github.com/Killroy97/Swirl_Module_ggplot2_tidyverse/assets/132211845/a7dad0f6-f568-4f96-9a1d-fe9eb0ad1110)  
+
+
 **What datasets are choosen and why?**
 The first data set selected from the world bank data was Urban population growth in the
 world. Since the data set consisted of all the countries in the world, we wanted to narrow it down to
 one country from each part of the world, which resulted in the data of 7 countries.
 The second data set chosen was the Forest land (in sq.km) of the same countries as the first data set.
-The reason behind choosing this data set was that we wanted to highlight the correlation between growing population and declining forest area as we see it.  
+The reason behind choosing this data set was that we wanted to highlight the correlation between growing population and declining forest area as we see it.
+
+Once the user has downloaded the .swc file from the repository, They can simply use the command
+```
+library(swirl)
+swirl::install_course_directory(filepath)
+```
+The user has now successfully installed the course!Now, to begin the course, the user can simply run
+```
+swirl()
+```
+Running the above code will provide the user with the course menu.
+
+**NOTE**: The course module “facets and Geometric objects” requires installed R packages before you could
+install the course. An R package is a group of additional functions, information, and documentation for the
+R programming language.    
 
 ## Usage
-Once the installation of different libraries and datasets are done, the individual can start learning the course by simply following the instructions presented on the console. Any hurdles can be overcome by simply accessing the hint, or the examplar answer by procceding further.
- 
+- Once the installation of different libraries and datasets are done, the individual can start learning the course by simply following the instructions presented on the console. Any hurdles can be overcome by simply accessing the hint, or the examplar answer by procceding further.  
 
-## Contributing
+- The course module will take the learner through a inteactive learning environment where they can test their knowledge about R codes and test them. 
+- The individual will be able to understand the process to creating optimal geometry and facets for any datset desired by the end of this course. 
+- The [Markdown file](Project Report.pdf) can be used to navigate through the course, and also acts as a project report. 
 
-We welcome contributions from the community! If you would like to contribute to this project, please follow these guidelines:
-
-1. Fork the repository and create your branch: `git checkout -b feature/YourFeature`
-2. Commit your changes: `git commit -am 'Add some feature'`
-3. Push to your branch: `git push origin feature/YourFeature`
-4. Create a pull request describing your changes.
 
 Please ensure that you adhere to the project's coding conventions, documentation guidelines, and code of conduct.
 
@@ -109,10 +122,9 @@ This project is licensed under the [MIT License](LICENSE).
 
 If you have any questions, suggestions, or feedback, please feel free to reach out to us:
 
-- Project Website: [example.com](https://example.com)
 - Project Issues: [GitHub Issues](https://github.com/yourusername/yourrepository/issues)
-- Email: your-email@example.com
-- Twitter: [@yourtwitterhandle](https://twitter.com/yourtwitterhandle)
+- Email: srikarmulgund97@gmail.com
+
 
 
 
