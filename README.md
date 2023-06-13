@@ -1,8 +1,14 @@
-# Project Name
+# Swirl Course: Data Visualization with ggplot2  
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)  
 
-Short project description goes here.
+Learning R programming can be greatly enhanced through data visualization, which offers elegant and informative plots that facilitate quick analysis and comprehension of data frames. To provide users with an interactive and practical learning experience in R programming, I have developed a swirl package that transforms the R console into an engaging learning environment.
+
+This swirl course focuses specifically on teaching users data visualization using the popular ggplot2 package. Divided into three modules, each module covers different aspects of data visualization methods: scatter plots, facets and geometric objects, and bar graphs. The course is designed to guide users step-by-step, allowing them to learn at their own pace and grasp each aspect of the data visualization process.
+
+By completing these modules, users will gain the ability to write appropriate code, understand the underlying process, and effectively implement data visualization techniques. With this newfound knowledge, users will be equipped to leverage data visualization for strategic decision-making, making it easier and faster to derive insights from their data.
+
+Please note that a basic understanding of R and RStudio is expected in order to fully grasp the concepts presented in this course.
 
 ## Table of Contents
 
